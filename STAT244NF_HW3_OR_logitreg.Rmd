@@ -8,16 +8,16 @@ output: pdf_document
 
 ## Instructions:
 
-1. Please replace "YOUR NAME HERE" under author above with your name before you knit your final document for submission.
-2. All of your homework needs to be completed in this document, whether it requires R or just typed responses. As we incorporate more statistical computing into the course, it will be important that you are comfortable with R Markdown, so start now. Remember that R Markdown gives us a convenient framework for reproducible statistical reports because it contains a complete record of our analyses and conclusions.
-3. You may knit to PDF, HTML, or Word (click on the drop-down menu for Knit to choose the file output type). 
-4. Before submitting your work, please make sure the knitted file is well organized, legible, and looks the way you expect!
-5. Please include the names of any classmates with whom you worked on this homework, as well as any external resources that you might have used.
-6. This homework assignment is **due on Friday, September 24, 2021 and should be submitted to Gradescope**.
+1.  Please replace "YOUR NAME HERE" under author above with your name before you knit your final document for submission.
+2.  All of your homework needs to be completed in this document, whether it requires R or just typed responses. As we incorporate more statistical computing into the course, it will be important that you are comfortable with R Markdown, so start now. Remember that R Markdown gives us a convenient framework for reproducible statistical reports because it contains a complete record of our analyses and conclusions.
+3.  You may knit to PDF, HTML, or Word (click on the drop-down menu for Knit to choose the file output type).
+4.  Before submitting your work, please make sure the knitted file is well organized, legible, and looks the way you expect!
+5.  Please include the names of any classmates with whom you worked on this homework, as well as any external resources that you might have used.
+6.  This homework assignment is **due on Friday, February 16, 2024 and should be submitted to Gradescope**.
 
-- *Collaborators:*
+-   *Collaborators:*
 
-- *External resources:*
+-   *External resources:*
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -28,19 +28,25 @@ library(ggplot2)
 
 ## Infectious Disease Outbreak
 
-An infectious disease outbreak has been reported in a small town. The simulated data for this outbreak are included in the R project for this homework assignment. You should be able to read in the file using the following 
+An infectious disease outbreak has been reported in a small town. Investigators followed up with all residents in the town and identified potential exposures, including a local festival.
+
+The simulated data for this outbreak are included in the R project for this homework assignment. Assuming you pulled the file from Github as we have been doing in class for R labs, you should be able to directly run the following code to load the data into R.
 
 ```{r}
 outbreak <- read.csv("STAT244NF_HW3_town_outbreak.csv")
 ```
 
-#### Question ID 1. What kind of study would generate these data?
+Here is the description of the variables in the data set:
 
+\`resident_id\`: a unique identifier for each resident in the small town
 
-#### Question ID 2. Both relative risk and odds ratio are defined in terms of probabilities related to exposure/non-exposure. What constitutes "exposure" in this study? What about "non-exposure"?
+\`festival\`: an indicator variable for whether the resident attended the festival
 
+\`case\`: indicator variable for whether the resident became infected
 
-#### Question ID 3. Calculate the following probabilities based on the data in `id_outbreak`.
+### Question ID 1. Both relative risk and odds ratio are defined in terms of probabilities related to exposure/non-exposure. What constitutes the "exposure" of interest in this study? What about "non-exposure"?
+
+### Question ID 2. Calculate the following probabilities based on the data in `id_outbreak`.
 
 (a) $P(\text{disease}|\text{exposure})$
 
@@ -54,20 +60,23 @@ outbreak <- read.csv("STAT244NF_HW3_town_outbreak.csv")
 
 ```
 
-(c) Calculate the relative risk, the chance that a person who attended the winter festival will develop disease relative to the chance that a person who did not attend the winter festival will develop disease. 
+(c) Calculate the relative risk associated with this outbreak.
 
 ```{r}
 
 ```
 
-(d) Calculate the odds ratio associated with this outbreak.
+(d) Interpret the relative risk you calculated.
+
+(e) Calculate the odds ratio associated with this outbreak.
 
 ```{r}
 
 ```
 
+(f) Interpret the odds ratio you calculated.
 
-#### Question ID 5. Binomial logistic regression
+### Question ID 3. Binomial logistic regression
 
 (a) Fit a logistic regression model with only an intercept to these data. Remember to use the `glm` function and to specify `family` argument in the `glm` function as `binomial`. Assign the model fit to `outbreak_binom` and print the summary of the model fit.
 
@@ -75,20 +84,32 @@ outbreak <- read.csv("STAT244NF_HW3_town_outbreak.csv")
 
 ```
 
-(b) What is the estimate of the intercept? Exponentiate this estimate. 
+(b) What is the estimate of the intercept? Exponentiate this estimate.
 
 ```{r}
 
 ```
 
+(c) What is the interpretation of the value you calculated in (b)? Explain in one sentence.
 
-(c) Find a 95% confidence interval for the estimate in (b). You can use the `confint` function and exponentiate that interval to get that interval. Please interpret this interval in context.
+(d) Find a 95% confidence interval for your answer in (b). Please interpret this interval in context.
 
 ```{r}
 
 ```
 
-(d) Compare the estimates and confidence intervals from the poisson and logistic regression models. How do the relative risk and odds ratios compare in this example?
+(e) Using the results from your logistic regression model, find the appropriate value to replace "X" in the following sentence:
 
+Among residents in this small town, the mean odds of infection among individuals who attended the festival is X times that for individuals who did not attend the festival.
 
+```{r}
 
+```
+
+(f) Find the 95% confidence interval corresponding to your answer in (e). Interpret this interval in context.
+
+```{r}
+
+```
+
+(g) Given your answer in (f), do you conclude the local festival is a likely source of infection? Why or why not? Defend your answer in 1-3 sentences.
