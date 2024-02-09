@@ -84,7 +84,7 @@ Here is the description of the variables in the data set:
 
 ```
 
-(b) What is the estimate of the intercept? Exponentiate this estimate.
+(b) What is the estimate of the intercept? Apply the inverse logit function to this estimate.
 
 ```{r}
 
@@ -92,7 +92,7 @@ Here is the description of the variables in the data set:
 
 (c) What is the interpretation of the value you calculated in (b)? Explain in one sentence.
 
-(d) Find a 95% confidence interval for your answer in (b). Please interpret this interval in context.
+(d) Find a 95% confidence interval for your answer (the result from applying the inverse logit) in (b). Please interpret this interval in context.
 
 ```{r}
 
