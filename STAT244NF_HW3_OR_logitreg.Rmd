@@ -1,0 +1,94 @@
+---
+title: 'Homework 3: Odds Ratios and Relative Risk'
+subtitle: "STAT 244NF: Infectious Disease Modeling"
+author: "YOUR NAME HERE"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+---
+
+## Instructions:
+
+1. Please replace "YOUR NAME HERE" under author above with your name before you knit your final document for submission.
+2. All of your homework needs to be completed in this document, whether it requires R or just typed responses. As we incorporate more statistical computing into the course, it will be important that you are comfortable with R Markdown, so start now. Remember that R Markdown gives us a convenient framework for reproducible statistical reports because it contains a complete record of our analyses and conclusions.
+3. You may knit to PDF, HTML, or Word (click on the drop-down menu for Knit to choose the file output type). 
+4. Before submitting your work, please make sure the knitted file is well organized, legible, and looks the way you expect!
+5. Please include the names of any classmates with whom you worked on this homework, as well as any external resources that you might have used.
+6. This homework assignment is **due on Friday, September 24, 2021 and should be submitted to Gradescope**.
+
+- *Collaborators:*
+
+- *External resources:*
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(ggplot2)
+```
+
+## Infectious Disease Outbreak
+
+An infectious disease outbreak has been reported in a small town. The simulated data for this outbreak are included in the R project for this homework assignment. You should be able to read in the file using the following 
+
+```{r}
+outbreak <- read.csv("STAT244NF_HW3_town_outbreak.csv")
+```
+
+#### Question ID 1. What kind of study would generate these data?
+
+
+#### Question ID 2. Both relative risk and odds ratio are defined in terms of probabilities related to exposure/non-exposure. What constitutes "exposure" in this study? What about "non-exposure"?
+
+
+#### Question ID 3. Calculate the following probabilities based on the data in `id_outbreak`.
+
+(a) $P(\text{disease}|\text{exposure})$
+
+```{r}
+
+```
+
+(b) $P(\text{disease}|\text{non-exposure})$
+
+```{r}
+
+```
+
+(c) Calculate the relative risk, the chance that a person who attended the winter festival will develop disease relative to the chance that a person who did not attend the winter festival will develop disease. 
+
+```{r}
+
+```
+
+(d) Calculate the odds ratio associated with this outbreak.
+
+```{r}
+
+```
+
+
+#### Question ID 5. Binomial logistic regression
+
+(a) Fit a logistic regression model with only an intercept to these data. Remember to use the `glm` function and to specify `family` argument in the `glm` function as `binomial`. Assign the model fit to `outbreak_binom` and print the summary of the model fit.
+
+```{r}
+
+```
+
+(b) What is the estimate of the intercept? Exponentiate this estimate. 
+
+```{r}
+
+```
+
+
+(c) Find a 95% confidence interval for the estimate in (b). You can use the `confint` function and exponentiate that interval to get that interval. Please interpret this interval in context.
+
+```{r}
+
+```
+
+(d) Compare the estimates and confidence intervals from the poisson and logistic regression models. How do the relative risk and odds ratios compare in this example?
+
+
+
